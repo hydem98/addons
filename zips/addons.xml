@@ -129,12 +129,12 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.genesisresurrected" version="7.7.9" name="genesis resurrected Rd only" provider-name="bone">
+<addon id="plugin.video.genesisresurrected" version="7.8.0" name="genesis resurrected Rd only" provider-name="bone">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.Superbeast.artwork" version="1.0.0" />
 		<import addon="script.genesisresurrected.metadata" version="1.0.0" />
-		<import addon="script.module.urlresolver" />
+		<import addon="script.module.bonesresolver" />
 		<import addon="script.module.metahandler" version="1.0.0" />
         <import addon="script.module.bonesrdscrapers" />
 	</requires>
@@ -219,7 +219,7 @@
 	</extension>
 </addon>
 
-<addon id="repository.dk" name="Dark Carnival Returns" version="1.0.8" provider-name="The Ringmaster">
+<addon id="repository.dk" name="Dark Carnival Returns" version="1.0.9" provider-name="The Ringmaster">
 	<extension point="xbmc.addon.repository" name="Dark Carnival REPO">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/hydem98/addons/master/zips/addons.xml</info>
@@ -321,7 +321,7 @@
 	</extension>
 </addon>
 
-<addon id="script.module.bonesrdscrapers" name="Bones RD Scrapers Module" version="0.0.2.007" provider-name="Addons4Kodi">
+<addon id="script.module.bonesrdscrapers" name="Bones RD Scrapers Module" version="0.0.2.008" provider-name="Addons4Kodi">
 	<requires>
 		<import addon="xbmc.python" version="2.25.0" />
 		<import addon="script.module.beautifulsoup4" />
