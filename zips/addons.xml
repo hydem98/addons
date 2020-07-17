@@ -35,6 +35,34 @@
     </extension>
 </addon>
 
+<addon id="plugin.video.bcreborn" version="1.0.11" name="Bone Crusher Reborn rd only" provider-name="Bone">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+		<import addon="script.bcreborn.metadata" />
+		<import addon="script.module.bonesresolver" />
+		<import addon="script.module.requests" />
+		<import addon="script.module.bonesrdscrapers" />
+		<import addon="script.module.metahandler" version="1.0.0" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Bone Crusher Reborn</summary>
+		<description lang="en">This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.</description>
+		<disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+    			<screenshot></screenshot>
+		</assets>
+		<news></news>
+	</extension>
+</addon>
+
 <addon id="plugin.video.dk" version="1.0.1" name="Dark Carnival" provider-name="The Ringmaster">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
@@ -101,6 +129,36 @@
     </extension>
 </addon>
 
+<addon id="plugin.video.genesisresurrected" version="7.7.9" name="genesis resurrected Rd only" provider-name="bone">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+		<import addon="script.Superbeast.artwork" version="1.0.0" />
+		<import addon="script.genesisresurrected.metadata" version="1.0.0" />
+		<import addon="script.module.urlresolver" />
+		<import addon="script.module.metahandler" version="1.0.0" />
+        <import addon="script.module.bonesrdscrapers" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="genesisresurrected.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">genesis resurrected to enable rd and perm. go into bones resolver</summary>
+		<description lang="en">Kindly note that genesisresurrected is not an official part of the media player you are running, and therefore not to be mentioned within official support channels, this addon has nothing to do with the media player itself, nor it’s intended use, it is simply a third party plugin which has been added to your system.</description>
+		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer><platform>all</platform>
+		<forum></forum>
+		<website></website>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot></screenshot>
+			<screenshot></screenshot>
+			<screenshot></screenshot>
+		</assets>
+		<news></news>
+	</extension>
+</addon>
+
 <addon id="plugin.video.odin" version="999.999.999b" name="Odin" provider-name="Bonecrusher">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
@@ -133,13 +191,13 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.s_i_r" version="1.0.4" name="Still i Rise" provider-name="Mr Unknown">
+<addon id="plugin.video.s_i_r" version="1.0.6" name="Still i Rise rd only" provider-name="bone">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.s_i_r.metadata" />
-		<import addon="script.module.resolveurl" />
+		<import addon="script.module.bonesresolver" />
 		<import addon="script.module.requests" />
-		<import addon="script.module.openscrapers" />
+		<import addon="script.module.bonesrdscrapers" />
 		<import addon="script.module.metahandler" version="1.0.0" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
@@ -161,7 +219,7 @@
 	</extension>
 </addon>
 
-<addon id="repository.dk" name="Dark Carnival Returns" version="1.0.6" provider-name="The Ringmaster">
+<addon id="repository.dk" name="Dark Carnival Returns" version="1.0.7" provider-name="The Ringmaster">
 	<extension point="xbmc.addon.repository" name="Dark Carnival REPO">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/hydem98/addons/master/zips/addons.xml</info>
@@ -195,6 +253,18 @@
         <clearlogo></clearlogo>
         <screenshot></screenshot>
     </assets>
+	</extension>
+</addon>
+
+<addon id="script.bcreborn.metadata" version="1.0.2" name="Bone Crusher Reborn Metadata" provider-name="Bone Crusher">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Metadata for the Bone Crusher Reborn Addon</summary>
+		<description>Metadata for Bone Crusher Reborn are maintained separately to make distribution of the the addon itself easier/faster.</description>
+		<platform>all</platform>
 	</extension>
 </addon>
 
@@ -236,6 +306,95 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
+    </extension>
+</addon>
+
+<addon id="script.genesisresurrected.metadata" version="7.7.7" name="genesisresurrected Metadata" provider-name="NecroMancer">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Metadata for the genesisresurrected Addon</summary>
+		<description>Metadata for genesisresurrected are maintained separately to make distribution of the the addon itself easier/faster.</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="script.module.bonesrdscrapers" name="Bones RD Scrapers Module" version="0.0.2.007" provider-name="Addons4Kodi">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0" />
+		<import addon="script.module.beautifulsoup4" />
+		<import addon="script.module.requests" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="lib/default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.service" library="lib/service.py" start="startup" />
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Bones RD Scrapers Module</summary>
+		<description>Scrape common video host for URL's to be playable in Kodi, simplifying addon development of video plugins requiring multi video hosts.</description>
+		<disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart></fanart>
+			<screenshot></screenshot>
+		</assets>
+		<news></news>
+	</extension>
+</addon>
+
+<addon id="script.module.bonesrduniversalscrapers" name="Bones RD Universal Scrapers debrid version" version="1.2.3a" provider-name="Team Universal">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.beautifulsoup" version="3.2.1"/>
+        <import addon="script.module.futures" version="2.2.0"/>
+        <import addon="script.module.requests"/>
+        <import addon="script.module.six"/>
+	<import addon="script.module.bonesresolver" version="5.0.00" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib"/>
+    <extension point="xbmc.python.pluginsource" library="lib/default.py">
+        <provides>executable</provides>
+    </extension>
+        <extension point="xbmc.addon.metadata">
+            <platform>all</platform>
+            <summary lang="en">Scrape common video host for URL's to be playable in XBMC/Kodi.</summary>
+            <description lang="en">Scrape common video host for URL's to be playable in XBMC/Kodi, simplifying addon development of video plugins requiring multi video hosts.
+            </description>
+            <license>GPL v3</license>
+            <source>https://</source>
+        </extension>
+</addon>
+
+<addon id="script.module.bonesresolver" name="bones resolver" version="1.0.0" provider-name="bone">
+    <requires>
+        <!-- <import addon="xbmc.python" version="3.0.0" /> -->
+        <import addon="script.module.six" version="0.0.1"/>
+        <import addon="plugin.video.youtube" optional="true" />
+        <import addon="script.module.python.twitch" optional="true" />
+        <import addon="script.module.cryptopy" version="1.2.6" optional="true" />
+        <import addon="plugin.video.gdrive" optional="true" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="lib/default.py" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
+        <summary lang="es">Resolver enlaces a videos de sitios populares para poder reproducirlos en XBMC/Kodi.</summary>
+        <summary lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju.</summary>
+        <summary lang="el">Επίλυση συνδέσμων κοινών εξυπηρετητών σε μορφή βίντεο ικανό για αναπαραγωγή στο XBMC/Kodi.</summary>
+        <description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
+        <description lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju, pojednostavnjuje razvoj priključaka za video dodatke koji zahtjevaju višestruke video izvore.</description>
+        <forum></forum>
+        <website></website>
     </extension>
 </addon>
 
