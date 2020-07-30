@@ -35,6 +35,61 @@
     </extension>
 </addon>
 
+<addon id="plugin.program.madhouse.favourites" name="MadHouse Favourites" version="1.0.1" provider-name="bones">
+  <requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+    <import addon="script.module.metahandler" optional="true" />
+  </requires>
+
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video audio image executable</provides>
+  </extension>
+
+
+  <extension point="xbmc.service" library="service.py" start="startup" />
+
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Put all your favourites bits of all your favourites addons into one easy to use addon.</summary>
+    <description lang="en">MadHouse Favourites is a better way of managing your Kodi Favourites.[CR][CR]Virtually any menu item within Kodi can be added to MadHouse Favourites, even from addons that don't normally provide this feature.[CR][CR]MadHouse Favourites allows you to better manage your Kodi favourites, including the creation of sub-folders, into which your Kodi favourites can then be copied or moved into.[CR][CR]This allows you to create you own custom addon with just the best bits of your favourite addons. Search your favourite addons, play your favourite music, read your favourite comic strips, select your favourite playlists, browse your favourite movies, listen to your favourite radio stations, watch your favourite cartoons, the possibilities are endless, all from within one easy to use addon.</description>
+    <platform>all</platform>
+    <language>en</language>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum>http://forum.xbmc.org/showthread.php?tid=192662</forum>
+    <website></website>
+    <source></source>
+    <email></email>
+
+    <news>
+    </news>
+
+  </extension>
+
+
+  <extension point="kodi.context.item">
+    <menu id="kodi.core.main">
+
+      <item library="capture.py">
+        <label>$ADDON[plugin.program.madhouse.favourites 30002]</label>
+        <visible>!IsEmpty(Window(Home).Property(MHF_STD_CONTEXTMENU_ENABLED)) + !StringCompare(Container.PluginName,plugin.program.madhouse.favourites)</visible>
+      </item>
+
+      <item library="menu_addtofaves.py">
+        <label>$ADDON[plugin.program.madhouse.favourites 30047]</label>
+        <visible>!IsEmpty(Window(Home).Property(MHF_STD_ADDTOFAVES_ENABLED)) + !StringCompare(Container.PluginName,plugin.program.madhouse.favourites)</visible>
+      </item>
+
+      <item library="menu_download.py">
+        <label>$ADDON[plugin.program.madhouse.favourites 30259]</label>
+        <visible>!IsEmpty(Window(Home).Property(MHF_STD_DOWNLOAD_ENABLED)) + Player.IsInternetStream</visible>
+      </item>
+
+    </menu>
+  </extension>
+
+</addon>
+
 <addon id="plugin.video.bcreborn" version="1.0.14" name="Bone Crusher" provider-name="Bone">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
@@ -62,6 +117,36 @@
 		</assets>
 		<news></news>
 	</extension>
+</addon>
+
+<addon id="plugin.video.bonetorrentrssviewer" name="[COLOR ffff9900]Bones Torrent RSS[/COLOR] Viewer" version="1.0.0"
+       provider-name="Bones">
+    <requires>
+        <import addon="xbmc.python" version="2.12.0"/>
+        <import addon="script.module.mctools" optional="false"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login">
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Bones Torrent RSS viewer</summary>
+        <summary lang="es">Visor de enlaces RSS Torrents</summary>
+        <description lang="en">This Add-on allows to view links from RSS source to be play for Pulsar, XBMCtorrent,
+            KmediaTorrent, Torrenter V2 or YATP with additional local library integration option
+        </description>
+        <description lang="es">Este Add-on permite ver los enlaces de fuentes RSS para ser reproducidas por medio de
+            Pulsar, XBMCtorrent, KmediaTorrent, Torrenter V2 o YATP con opción adicional de integración a la librería
+            local
+        </description>
+        <language></language>
+        <platform>all</platform>
+        <forum></forum>
+        <disclaimer lang="en">It is just for educational purpose[CR]Check if it is illegal in your country to use.
+        </disclaimer>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    </extension>
 </addon>
 
 <addon id="plugin.video.dk" version="1.0.1" name="Dark Carnival" provider-name="The Ringmaster">
@@ -220,7 +305,7 @@
 	</extension>
 </addon>
 
-<addon id="repository.dk" name="Dark Carnival Returns" version="1.0.12" provider-name="The Ringmaster">
+<addon id="repository.dk" name="Dark Carnival Returns" version="1.0.13" provider-name="The Ringmaster">
 	<extension point="xbmc.addon.repository" name="Dark Carnival REPO">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/hydem98/addons/master/zips/addons.xml</info>
@@ -267,6 +352,51 @@
 		<description>Metadata for Bone Crusher Reborn are maintained separately to make distribution of the the addon itself easier/faster.</description>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="script.bonedebrid" name="BoneDebrid" version="0.5" provider-name="Bones">
+	<requires>
+        <import addon="script.module.requests" version="2.3.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>executable</provides>
+	</extension>
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+          <item library="addon.py">
+            <label>Play using BoneDebrid A fork of ptoms RealDebrid Script</label>
+            <visible>Container.Content(episodes) | Container.Content(movies)</visible>
+          </item>
+        </menu>
+      </extension>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<description lang="en">Unofficial RealDebrid client. Manage your torrents, unrestricted links and view host statuses all within Kodi.</description>
+        <summary>Unofficial RealDebrid client. Manage your torrents, unrestricted links and view host statuses all within Kodi.</summary>
+        <news>v0.5 - added "Play using RealDebrid" to context menu</news>
+        <website>http://www.ptom.co.uk</website>
+		<platform>all</platform>
+		<language>en</language>
+		<email>ptom98@gmail.com</email>
+	</extension>
+</addon>
+
+<addon id="script.bonetorrent" name="bonetorrent" version="1.0.0" provider-name="bones">
+    <requires>
+        <import addon="xbmc.python" version="2.14.0"/>
+        <import addon="script.module.requests" version="2.3.5"/>
+        <import addon="script.module.html5lib" version="0.999.0" optional="false"/>
+        <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides></provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary><![CDATA[Torrent streaming
+        for KODI/XBMC.]]></summary>
+        <description><![CDATA[Watch torrents directly from KODI/XBMC, without waiting.]]></description>
+    </extension>
 </addon>
 
 <addon id="script.dk.metadata" version="1.0.0" name="Dark Carnival Metadata" provider-name="The Ringmaster">
@@ -427,6 +557,34 @@
         <forum></forum>
         <website></website>
     </extension>
+</addon>
+
+<addon id="script.module.mctools" name="common tools mc" version="1.5.0" provider-name="mancuniancol">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.beautifulsoup4" optional="false"/>
+    <import addon="script.module.html5lib" optional="false"/>
+    <import addon="script.module.requests" optional="false"/>
+    <import addon="script.module.feedparser" optional="false"/>
+    <import addon="script.module.xbmcswift2" optional="false"/>
+    <import addon="script.module.simplejson" optional="false"/>
+    <import addon="script.module.metahandler" optional="false"/>
+    <import addon="script.module.httplib2" optional="false"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Collection of common tools for addons</summary>
+    <description lang="en">Collection of tools from different authors.  All the credit should be given to them</description>
+    <disclaimer lang="en"></disclaimer>
+    <language></language>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum>http://forums.tvaddons.ag/addon-releases/37973-torrent-rss-kickass-yts-torrentz-viewers-3.html#post314231</forum>
+    <website>https://github.com/mancuniancol/script.module.mctools</website>
+    <email></email>
+    <source></source>
+  </extension>
 </addon>
 
 <addon id="script.odin.metadata" version="1.0.0" name="Odin Metadata" provider-name="Bonecrusher">
