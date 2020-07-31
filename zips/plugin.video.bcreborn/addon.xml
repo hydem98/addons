@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.bcreborn" version="1.0.14" name="Bone Crusher" provider-name="Bone">
+<addon id="plugin.video.bcreborn" version="1.0.15" name="Bone Crusher" provider-name="Bone">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.bcreborn.metadata" />
